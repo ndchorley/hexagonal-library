@@ -14,6 +14,8 @@ dependencies {
     implementation(platform("org.http4k:http4k-bom:5.14.1.0"))
     implementation("org.http4k:http4k-core")
     implementation("org.http4k:http4k-template-handlebars")
+    implementation("org.http4k:http4k-client-apache")
+    implementation("org.http4k:http4k-server-jetty")
     implementation("org.http4k:http4k-testing-webdriver")
 
     testImplementation(platform("org.junit:junit-bom:5.10.2"))
