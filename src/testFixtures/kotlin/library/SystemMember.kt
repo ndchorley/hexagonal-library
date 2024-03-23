@@ -1,6 +1,7 @@
 package library
 
 import library.actors.Member
+import library.domain.Library
 import org.http4k.core.HttpHandler
 
 class SystemMember(library: Library) : Member, HttpMember {

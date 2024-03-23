@@ -1,6 +1,6 @@
 package library.actors
 
-import library.Book
+import library.domain.Book
 
 interface Member {
     fun listBooks(): List<Book>

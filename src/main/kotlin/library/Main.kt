@@ -1,5 +1,6 @@
 package library
 
+import library.domain.Library
 import org.http4k.server.Jetty
 import org.http4k.server.asServer
 

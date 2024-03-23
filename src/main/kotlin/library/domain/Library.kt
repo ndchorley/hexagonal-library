@@ -1,4 +1,4 @@
-package library
+package library.domain
 
 class Library {
     private val books =

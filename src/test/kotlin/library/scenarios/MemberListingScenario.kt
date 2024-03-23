@@ -1,7 +1,7 @@
 package library.scenarios
 
-import library.Book
 import library.actors.Member
+import library.domain.Book
 import org.junit.jupiter.api.Test
 import strikt.api.expectThat
 import strikt.assertions.isEqualTo

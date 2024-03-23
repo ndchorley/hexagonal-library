@@ -1,6 +1,7 @@
 package library
 
 import library.actors.Member
+import library.domain.Book
 import org.http4k.core.HttpHandler
 import org.http4k.webdriver.Http4kWebDriver
 import org.openqa.selenium.By
