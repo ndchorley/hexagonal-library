@@ -6,12 +6,13 @@ import org.http4k.webdriver.Http4kWebDriver
 import org.openqa.selenium.By
 
 interface HttpMember : Member {
+    val baseUri: String
     val system: HttpHandler
 
     override fun listBooks(): List<Book> {
         val driver = Http4kWebDriver(system)
 
-        driver.navigate().to("/")
+        driver.navigate().to("$baseUri/")
 
         val bookDiv = driver.findElement(By.id("book"))
 
