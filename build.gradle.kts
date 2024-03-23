@@ -11,6 +11,11 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("org.http4k:http4k-bom:5.14.1.0"))
+    implementation("org.http4k:http4k-core")
+    implementation("org.http4k:http4k-template-handlebars")
+    implementation("org.http4k:http4k-testing-webdriver")
+
     testImplementation(platform("org.junit:junit-bom:5.10.2"))
 	testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("io.strikt:strikt-core:0.34.1")
