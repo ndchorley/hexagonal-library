@@ -9,7 +9,7 @@ class DeployedSystemMemberListingTests : MemberListingScenario {
     private val port = 8000
     override val member: Member = DeployedSystemMember(port)
 
-    private val server = createApp(port)
+    private val server = createServer(port)
 
     @BeforeEach
     fun startApp() {
