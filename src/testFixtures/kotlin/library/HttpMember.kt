@@ -21,17 +21,17 @@ interface HttpMember : Member {
 
         return bookDivs.asListOfBooks()
     }
+}
 
-    private fun List<WebElement>.asListOfBooks() = mapNotNull { div ->
-        val title = div.findElement(By.className("title"))?.text
-        val author = div.findElement(By.className("author"))?.text
-        val copies = div.findElement(By.className("copies"))?.text?.toInt()
+private fun List<WebElement>.asListOfBooks() = mapNotNull { div ->
+    val title = div.findElement(By.className("title"))?.text
+    val author = div.findElement(By.className("author"))?.text
+    val copies = div.findElement(By.className("copies"))?.text?.toInt()
 
-        when {
-            title != null && author != null && copies != null ->
-                (Book(title, author, copies))
+    when {
+        title != null && author != null && copies != null ->
+            (Book(title, author, copies))
 
-            else -> null
-        }
+        else -> null
     }
 }
