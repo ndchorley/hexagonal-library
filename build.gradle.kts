@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.9.23"
     `java-test-fixtures`
+    id("com.adarshr.test-logger").version("4.0.0")
 }
 
 group = "org.example"
@@ -26,6 +27,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(21)
 }
