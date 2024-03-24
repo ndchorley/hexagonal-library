@@ -15,14 +15,17 @@ interface HttpMember : Member {
 
         driver.navigate().to("$baseUri/")
 
-        val bookDiv = driver.findElement(By.id("book"))
+        val bookDiv =
+            driver.findElement(By.id("book")) ?: return emptyList()
 
-        val title = bookDiv?.findElement(By.id("title"))?.text
-        val author = bookDiv?.findElement(By.id("author"))?.text
-        val copies = bookDiv?.findElement(By.id("copies"))?.text?.toInt()
+        val title = bookDiv.findElement(By.id("title"))?.text
+        val author = bookDiv.findElement(By.id("author"))?.text
+        val copies = bookDiv.findElement(By.id("copies"))?.text?.toInt()
 
         return when {
-            title != null && author != null && copies != null -> listOf(Book(title, author, copies))
+            title != null && author != null && copies != null ->
+                listOf(Book(title, author, copies))
+
             else -> emptyList()
         }
     }
