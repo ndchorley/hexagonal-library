@@ -15,18 +15,20 @@ interface HttpMember : Member {
 
         driver.navigate().to("$baseUri/")
 
-        val bookDiv =
-            driver.findElement(By.id("book")) ?: return emptyList()
+        val bookDivs =
+            driver.findElements(By.className("book")) ?: return emptyList()
 
-        val title = bookDiv.findElement(By.id("title"))?.text
-        val author = bookDiv.findElement(By.id("author"))?.text
-        val copies = bookDiv.findElement(By.id("copies"))?.text?.toInt()
+        return bookDivs.mapNotNull { div ->
+            val title = div.findElement(By.className("title"))?.text
+            val author = div.findElement(By.className("author"))?.text
+            val copies = div.findElement(By.className("copies"))?.text?.toInt()
 
-        return when {
-            title != null && author != null && copies != null ->
-                listOf(Book(title, author, copies))
+            when {
+                title != null && author != null && copies != null ->
+                    (Book(title, author, copies))
 
-            else -> emptyList()
+                else -> null
+            }
         }
     }
 }
