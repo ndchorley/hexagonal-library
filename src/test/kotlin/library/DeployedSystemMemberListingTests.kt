@@ -6,9 +6,10 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 
 class DeployedSystemMemberListingTests : MemberListingScenario {
-    override val member: Member = DeployedSystemMember()
+    private val port = 8000
+    override val member: Member = DeployedSystemMember(port)
 
-    private val server = createApp(8000)
+    private val server = createApp(port)
 
     @BeforeEach
     fun startApp() {
