@@ -1,11 +1,11 @@
 package library
 
 import library.actors.Member
-import library.scenarios.MemberListingScenario
+import library.scenarios.MemberListingBooksScenario
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 
-class DeployedSystemMemberListingTests : MemberListingScenario {
+class DeployedSystemMemberListingTestsBooks : MemberListingBooksScenario {
     private val port = 8000
     override val member: Member = DeployedSystemMember(port)
 

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import strikt.api.expectThat
 import strikt.assertions.isEqualTo
 
-interface MemberListingScenario {
+interface MemberListingBooksScenario {
     val member: Member
 
     @Test
